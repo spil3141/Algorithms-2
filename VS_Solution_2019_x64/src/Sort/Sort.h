@@ -3,6 +3,7 @@
 #include "Utils/Common.h"
 #include "Utils/Timer.h"
 #include <vector>
+#include <array>
 
 namespace SP {
 	namespace Algorithm {
@@ -12,7 +13,8 @@ namespace SP {
 
 		// <summary> perform bubble sort on a list of elements </summary>
 		// <para name="arr"> Unsorted list of element </para> 
-		void BubbleSort(std::vector<int>& arr)
+		template<class T>
+		void BubbleSort(std::vector<T>& arr)
 		{
 			std::cout << "Bubble Sort: " << std::endl;
 			Timer timer;
@@ -117,5 +119,58 @@ namespace SP {
 					index--;
 				}
 			}
+		}
+
+		void Merge(std::vector<int>& arr, int start, int mid, int end)
+		{
+			// create a temp array to hold sorted sub-array
+			std::vector<int> temp_arr;
+			for (int i = 0; i < (end - start) + 1; i++)
+				temp_arr.push_back(0);
+
+			// crawlers for both intervals and for temp
+			int i = start, j = mid + 1, k = 0;
+
+			// traverse both arrays and in each iteration add smaller of both elements in temp 
+			while (i <= mid && j <= end) {
+				if (arr[i] <= arr[j]) {
+					temp_arr[k] = arr[i];
+					k += 1; i += 1;
+				}
+				else {
+					temp_arr[k] = arr[j];
+					k += 1; j += 1;
+				}
+			}
+
+			// add elements left in the first interval 
+			while (i <= mid) {
+				temp_arr[k] = arr[i];
+				k += 1; i += 1;
+			}
+
+			// add elements left in the second interval 
+			while (j <= end) {
+				temp_arr[k] = arr[j];
+				k += 1; j += 1;
+			}
+
+			// copy temp to original interval
+			for (i = start; i <= end; i += 1) {
+				arr[i] = temp_arr[i - start];
+			}
+		}
+
+		template<class T>
+		static void MergeSort(std::vector<T>& arr, int start, int end)
+		{
+			if (start < end)
+			{
+				int mid = (start + end) / 2;
+				MergeSort(arr, start, mid);
+				MergeSort(arr, mid + 1, end);
+				Merge(arr, start, mid, end);
+			}
+
 		}
 }}

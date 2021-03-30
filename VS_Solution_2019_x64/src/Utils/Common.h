@@ -5,9 +5,10 @@ namespace SP { namespace Utility {
 		// <summary> Swap two numbers </summary>
 		// <para name="a"> Element a </para> 
 		// <para name="b"> Element b </para> 
-		inline void Swap(int& a, int& b)
+		template<typename T>
+		inline void Swap(T& a, T& b)
 		{
-			int temp = a;
+			T temp = a;
 			a = b;
 			b = temp;
 		}
