@@ -18,15 +18,21 @@
     <ClCompile Include="src\app.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Algorithms\Sorter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Utils\Random.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Utils\Timer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Utils\Common.h">
+    <ClInclude Include="src\Algorithms\Sorter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Sort\Sort.h">
+    <ClInclude Include="src\Utils\Random.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

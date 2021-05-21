@@ -4,7 +4,7 @@
 #include <chrono>
 
 
-namespace SP { namespace Utility {
+namespace Utils {
 
 	//<summary> Timer Class </summary> 
 	class Timer
@@ -31,4 +31,4 @@ namespace SP { namespace Utility {
 		std::chrono::time_point<std::chrono::high_resolution_clock> m_StartTimepoint;
 	};
 
-}}
+}
