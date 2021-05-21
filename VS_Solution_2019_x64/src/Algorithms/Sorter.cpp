@@ -30,7 +30,6 @@ namespace Algorithm {
 		}
 	}
 
-
 	void Sorter::Merge(std::vector<int>& arr, int start, int mid, int end)
 	{
 		// create a temp array to hold sorted sub-array
@@ -82,4 +81,20 @@ namespace Algorithm {
 		}
 
 	}
+
+	void Sorter::InsertionSort(int arr[], int N)
+	{
+		int index;
+
+		for (int i = 0; i < N - 1; i++)
+		{
+			index = i;
+			while (arr[index] > arr[index + 1])
+			{
+				Swap(arr[index], arr[index + 1]);
+				index--;
+			}
+		}
+	}
+
 }

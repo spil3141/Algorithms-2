@@ -46,20 +46,29 @@ int main()
 	//Display(Arr1, "Display Data before: ");
 
 	{		
+		std::cout << "Bubble Sort\n";
 		Utils::Timer timer;
 		Sorter.BubbleSort(&Arr1[0], Arr1.size());
 	}
 	ResetArray(Arr1, MAX);
 	{
+		std::cout << "Selection Sort\n";
 		Utils::Timer timer;
 		Sorter.SelectionSort(&Arr1[0], Arr1.size());
 	}
 	ResetArray(Arr1, MAX);
 	{
+		std::cout << "Insertion Sort\n";
+		Utils::Timer timer;
+		Sorter.InsertionSort(&Arr1[0], Arr1.size());
+	}
+	ResetArray(Arr1, MAX);
+	{
+		std::cout << "Merge Sort\n";
 		Utils::Timer timer;
 		Sorter.MergeSort(Arr1, 0, Arr1.size() - 1);
 	}
-
+	
 
 	// After Sorting 
 	//Display(Arr1, "After   :");
